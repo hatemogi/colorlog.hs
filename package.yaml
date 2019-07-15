@@ -23,7 +23,7 @@ dependencies:
 - base >= 4.7 && < 5
 - bytestring
 - containers
-- regex-tdfa
+- regex-pcre
 
 library:
   source-dirs: src
@@ -36,6 +36,9 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -static
+    cc-options: -static
+    ld-options: -static -pthread
     dependencies:
     - colorlog
 
